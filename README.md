@@ -65,12 +65,17 @@ Create alert rules
 Automate detection using Python
 
 ---
+### Event ID 4625 – Failed Login Analysis
+
+![Event Viewer Security Log](screenshots/windows/event_viewer_security_log.png)
+
+![Filtered Event ID 4625](screenshots/windows/02_filtered_event_id_4625.png)
+
 
 ## 4️⃣ Add Your Analysis Notes (Optional but Powerful)
 
 Create `notes/analysis-steps.md`
 
-```md
 ## Steps Followed
 
 1. Created Windows and Linux VMs
