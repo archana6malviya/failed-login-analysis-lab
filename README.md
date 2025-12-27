@@ -66,7 +66,8 @@ Automate detection using Python
 
 ---
 ### Event ID 4625 – Windows Failed Login Investigation
-
+Event ID 4625 details were captured using the Details tab (Friendly and XML views).
+Multiple screenshots were taken to document account, failure, and network information.
 The following screenshots document the investigation workflow:
 
 1. Security log overview
