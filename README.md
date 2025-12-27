@@ -10,8 +10,8 @@ unauthorized access attempts and potential brute-force attacks.
 ---
 
 ## 🛠 Tools & Technologies Used
-- VirtualBox / VMware
-- Windows 10 / Windows Server
+- VirtualBox
+- Windows 10
 - Linux (Ubuntu)
 - Event Viewer
 - Linux auth logs
@@ -45,24 +45,23 @@ unauthorized access attempts and potential brute-force attacks.
 - Analyzed authentication logs:
 /var/log/auth.log
 - Detected failed SSH login attempts using:
+
 ```bash
 grep "Failed password" /var/log/auth.log
+
+
 📸 Screenshots available in:screenshots/linux/
+
 🚨 Key Learnings
-
 Understanding authentication logs
-
 Identifying brute-force indicators
-
 Importance of log monitoring in SOC operations
-
 Hands-on exposure to real security events
+
+
 📈 Future Improvements
-
 Integrate SIEM (Splunk / Elastic)
-
 Create alert rules
-
 Automate detection using Python
 
 ---
