@@ -65,7 +65,15 @@ Create alert rules
 Automate detection using Python
 
 ---
-### Event ID 4625 – Failed Login Analysis
+### Event ID 4625 – Windows Failed Login Investigation
+
+The following screenshots document the investigation workflow:
+
+1. Security log overview
+2. Filtered failed login events (Event ID 4625)
+3. Account and failure details
+4. Network and logon type analysis
+5. Raw XML event data
 
 ![Event Viewer Security Log & Filtered Event ID 4625](screenshots/windows/event_viewer_security_log.png)
 
