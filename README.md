@@ -43,11 +43,9 @@ unauthorized access attempts and potential brute-force attacks.
 
 ## 🐧 Linux Log Analysis
 - Analyzed authentication logs:
-
 - Failed SSH login attempts were filtered from auth.log using tail and grep
 to identify authentication failures.
 
-```bash
 sudo tail -n 50 /var/log/auth.log | grep -i "failed password"
 
 📸 Screenshots available in: screenshots/linux/
@@ -81,22 +79,18 @@ The following screenshots document the investigation workflow:
 1️⃣ Environment Preparation
 
 Deployed an Ubuntu Linux virtual machine using VirtualBox / VMware
-
 Ensured SSH service was running to generate authentication events
-
 Confirmed logging via /var/log/auth.log
+
 2️⃣ Incident Simulation
 
 Generated multiple failed SSH login attempts by:
-
 Attempting SSH access with incorrect passwords
-
 Using invalid and valid usernames
-
 This activity simulated potential brute-force behavior
+
 3️⃣ Log Identification
 Verified log updates using:
-
 sudo tail -n 20 /var/log/auth.log
 
 4️⃣ Log Filtering & Analysis
@@ -104,7 +98,6 @@ sudo tail -n 50 /var/log/auth.log | grep -i "failed password"
 
 Real-Time Monitoring (Optional)
 Monitored authentication logs live using:
-
 sudo tail -f /var/log/auth.log
 
 Observed logs updating during additional failed login attempts
@@ -112,6 +105,5 @@ Evidence Collection
 
 Captured screenshots of:
 
-Terminal overview
-
-Filtered failed login output
+1. Terminal overview
+2. Filtered failed login output
