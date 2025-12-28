@@ -43,6 +43,7 @@ unauthorized access attempts and potential brute-force attacks.
 
 ## 🐧 Linux Log Analysis
 - Analyzed authentication logs:
+  
 - Failed SSH login attempts were filtered from auth.log using tail and grep
 to identify authentication failures.
 
@@ -51,6 +52,7 @@ sudo tail -n 50 /var/log/auth.log | grep -i "failed password"
 📸 Screenshots available in: screenshots/linux/
 
 🚨 Key Learnings
+
 1. Understanding authentication logs
 2. Identifying brute-force indicators
 3. Importance of log monitoring in SOC operations
@@ -64,6 +66,7 @@ sudo tail -n 50 /var/log/auth.log | grep -i "failed password"
 
 ---
 ### Event ID 4625 – Windows Failed Login Investigation
+
 Event ID 4625 details were captured using the Details tab (Friendly and XML views).
 
 Multiple screenshots were taken to document account, failure, and network information.
@@ -81,8 +84,8 @@ The following screenshots document the investigation workflow:
 1️⃣ Environment Preparation
 
 1. Deployed an Ubuntu Linux virtual machine using VirtualBox / VMware
-2. Ensured SSH service was running to generate authentication events
-3. Confirmed logging via /var/log/auth.log
+3. Ensured SSH service was running to generate authentication events
+4. Confirmed logging via /var/log/auth.log
 
 2️⃣ Incident Simulation
 
@@ -92,6 +95,7 @@ The following screenshots document the investigation workflow:
 4. This activity simulated potential brute-force behavior
 
 3️⃣ Log Identification
+
 1. Verified log updates using: sudo tail -n 20 /var/log/auth.log
 
 4️⃣ Log Filtering & Analysis
@@ -99,13 +103,17 @@ The following screenshots document the investigation workflow:
 sudo tail -n 50 /var/log/auth.log | grep -i "failed password"
 
 ### Real-Time Monitoring (Optional)
+
 1. Monitored authentication logs live using:
+2. 
 sudo tail -f /var/log/auth.log
 
-2. Observed logs updating during additional failed login attempts
-3. Evidence Collection
+3. Observed logs updating during additional failed login attempts
+  
+4. Evidence Collection
 
 Captured screenshots of:
 
 1. Terminal overview
+   
 2. Filtered failed login output
