@@ -51,21 +51,23 @@ sudo tail -n 50 /var/log/auth.log | grep -i "failed password"
 📸 Screenshots available in: screenshots/linux/
 
 🚨 Key Learnings
-Understanding authentication logs
-Identifying brute-force indicators
-Importance of log monitoring in SOC operations
-Hands-on exposure to real security events
+1. Understanding authentication logs
+2. Identifying brute-force indicators
+3. Importance of log monitoring in SOC operations
+4. Hands-on exposure to real security events
 
 
 📈 Future Improvements
-Integrate SIEM (Splunk / Elastic)
-Create alert rules
-Automate detection using Python
+1. Integrate SIEM (Splunk / Elastic)
+2. Create alert rules
+3. Automate detection using Python
 
 ---
 ### Event ID 4625 – Windows Failed Login Investigation
 Event ID 4625 details were captured using the Details tab (Friendly and XML views).
+
 Multiple screenshots were taken to document account, failure, and network information.
+
 The following screenshots document the investigation workflow:
 
 1. Security log overview
@@ -78,30 +80,30 @@ The following screenshots document the investigation workflow:
 ### Linux Investigation- Failed login
 1️⃣ Environment Preparation
 
-Deployed an Ubuntu Linux virtual machine using VirtualBox / VMware
-Ensured SSH service was running to generate authentication events
-Confirmed logging via /var/log/auth.log
+1. Deployed an Ubuntu Linux virtual machine using VirtualBox / VMware
+2. Ensured SSH service was running to generate authentication events
+3. Confirmed logging via /var/log/auth.log
 
 2️⃣ Incident Simulation
 
-Generated multiple failed SSH login attempts by:
-Attempting SSH access with incorrect passwords
-Using invalid and valid usernames
-This activity simulated potential brute-force behavior
+1. Generated multiple failed SSH login attempts by:
+2. Attempting SSH access with incorrect passwords
+3. Using invalid and valid usernames
+4. This activity simulated potential brute-force behavior
 
 3️⃣ Log Identification
-Verified log updates using:
-sudo tail -n 20 /var/log/auth.log
+1. Verified log updates using: sudo tail -n 20 /var/log/auth.log
 
 4️⃣ Log Filtering & Analysis
+
 sudo tail -n 50 /var/log/auth.log | grep -i "failed password"
 
-Real-Time Monitoring (Optional)
-Monitored authentication logs live using:
+### Real-Time Monitoring (Optional)
+1. Monitored authentication logs live using:
 sudo tail -f /var/log/auth.log
 
-Observed logs updating during additional failed login attempts
-Evidence Collection
+2. Observed logs updating during additional failed login attempts
+3. Evidence Collection
 
 Captured screenshots of:
 
