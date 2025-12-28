@@ -37,20 +37,20 @@ unauthorized access attempts and potential brute-force attacks.
 - Used Event Viewer for investigation
 
 
-📸 Screenshots available in:screenshots/windows/
+📸 Screenshots available in: screenshots/windows/
 
 ---
 
 ## 🐧 Linux Log Analysis
 - Analyzed authentication logs:
-/var/log/auth.log
-- Detected failed SSH login attempts using:
+
+- Failed SSH login attempts were filtered from auth.log using tail and grep
+to identify authentication failures.
 
 ```bash
-grep "Failed password" /var/log/auth.log
+sudo tail -n 50 /var/log/auth.log | grep -i "failed password"
 
-
-📸 Screenshots available in:screenshots/linux/
+📸 Screenshots available in: screenshots/linux/
 
 🚨 Key Learnings
 Understanding authentication logs
@@ -76,28 +76,42 @@ The following screenshots document the investigation workflow:
 4. Network and logon type analysis
 5. Raw XML event data
 
-![Event Viewer Security Log & Filtered Event ID 4625](screenshots/windows/event_viewer_security_log.png)
+-----
+### Linux Investigation- Failed login
+1️⃣ Environment Preparation
 
-![4625 Account Failure Details](screenshots/windows/4625_account_failure_details.png)
+Deployed an Ubuntu Linux virtual machine using VirtualBox / VMware
 
-![4625Network Logon Details](screenshots/windows/4625_network_logon_details.png)
+Ensured SSH service was running to generate authentication events
 
-![4625 xml View](screenshots/windows/4625_xml_view.png)
+Confirmed logging via /var/log/auth.log
+2️⃣ Incident Simulation
 
+Generated multiple failed SSH login attempts by:
 
-## 4️⃣ Add Your Analysis Notes (Optional but Powerful)
+Attempting SSH access with incorrect passwords
 
-Create `notes/analysis-steps.md`
+Using invalid and valid usernames
 
-## Steps Followed
+This activity simulated potential brute-force behavior
+3️⃣ Log Identification
+Verified log updates using:
 
-1. Created Windows and Linux VMs
-2. Generated failed login attempts manually
-3. Collected authentication logs
-4. Analyzed logs to identify suspicious activity
-5. Documented findings with screenshots
+sudo tail -n 20 /var/log/auth.log
 
-## Observations
-- Multiple failed attempts from same IP indicate brute-force behavior
-- Logs provide crucial forensic evidence
+4️⃣ Log Filtering & Analysis
+sudo tail -n 50 /var/log/auth.log | grep -i "failed password"
 
+Real-Time Monitoring (Optional)
+Monitored authentication logs live using:
+
+sudo tail -f /var/log/auth.log
+
+Observed logs updating during additional failed login attempts
+Evidence Collection
+
+Captured screenshots of:
+
+Terminal overview
+
+Filtered failed login output
